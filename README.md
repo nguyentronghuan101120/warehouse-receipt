@@ -1,5 +1,11 @@
 ⚠️ Bài test này được thực hiện bởi Nguyễn Trọng Huân, chỉ dùng cho mục đích đánh giá tuyển dụng tại Công ty CP Phần mềm Y tế Việt Nam. Mọi hành vi sử dụng lại một phần hay toàn bộ nội dung trong bài test này với mục đích thương mại mà không có sự đồng ý bằng văn bản đều bị nghiêm cấm.
 
+### 🔐 Firebase Configuration
+
+Do lý do bảo mật, tôi không đẩy file cấu hình Firebase (`google-services.json`, `GoogleService-Info.plist`) lên GitHub public.
+
+Nếu cần kiểm thử, tôi có thể gửi trực tiếp file cấu hình qua email hoặc hướng dẫn cài đặt Firebase riêng.
+
 # Hệ Thống Quản Lý Phiếu Nhập Kho
 
 Ứng dụng Flutter để quản lý phiếu nhập kho và theo dõi hàng tồn kho.
@@ -104,7 +110,6 @@ flutter test --coverage
 ```
 
 <img width="1193" alt="image" src="https://github.com/user-attachments/assets/9f86d2ef-6f97-4b54-9ff8-519d202d9e9a" />
-
 
 ## Cấu Trúc Cơ Sở Dữ Liệu
 
