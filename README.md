@@ -4,6 +4,8 @@
 
 Ứng dụng Flutter để quản lý phiếu nhập kho và theo dõi hàng tồn kho.
 
+Phiên bản web có sẵn tại: https://warehouse-receipt-a9ad9.web.app, có thể truy cập để test nhanh mà không cần build
+
 ## Tính Năng
 
 - Tạo và quản lý phiếu nhập kho
@@ -100,6 +102,9 @@ flutter test
 ```bash
 flutter test --coverage
 ```
+
+<img width="1193" alt="image" src="https://github.com/user-attachments/assets/9f86d2ef-6f97-4b54-9ff8-519d202d9e9a" />
+
 
 ## Cấu Trúc Cơ Sở Dữ Liệu
 
