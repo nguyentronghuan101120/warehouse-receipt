@@ -101,6 +101,9 @@ flutter test
 flutter test --coverage
 ```
 
+<img width="1193" alt="image" src="https://github.com/user-attachments/assets/9f86d2ef-6f97-4b54-9ff8-519d202d9e9a" />
+
+
 ## Cấu Trúc Cơ Sở Dữ Liệu
 
 Ứng dụng sử dụng Firestore làm cơ sở dữ liệu với cấu trúc sau:
