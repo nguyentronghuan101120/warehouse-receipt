@@ -1,3 +1,5 @@
+⚠️ Bài test này được thực hiện bởi Nguyễn Trọng Huân, chỉ dùng cho mục đích đánh giá tuyển dụng tại Công ty CP Phần mềm Y tế Việt Nam. Mọi hành vi sử dụng lại một phần hay toàn bộ nội dung trong bài test này với mục đích thương mại mà không có sự đồng ý bằng văn bản đều bị nghiêm cấm.
+
 # Hệ Thống Quản Lý Phiếu Nhập Kho
 
 Ứng dụng Flutter để quản lý phiếu nhập kho và theo dõi hàng tồn kho.
