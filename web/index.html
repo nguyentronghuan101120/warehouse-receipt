@@ -40,20 +40,8 @@
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
       import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyBIzEz7wZbRpizYJlCli7JX9vix2aBbUS8",
-        authDomain: "warehouse-receipt-a9ad9.firebaseapp.com",
-        projectId: "warehouse-receipt-a9ad9",
-        storageBucket: "warehouse-receipt-a9ad9.firebasestorage.app",
-        messagingSenderId: "814665772009",
-        appId: "1:814665772009:web:6b4ee4886992f874d7f978",
-        measurementId: "G-1KFKE9HTG6",
-      };
+      // Import Firebase configuration
+      import { firebaseConfig } from "./firebase-config.js";
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
