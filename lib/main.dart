@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<ReceiptRemoteDataSource>(
-          create: (_) => ReceiptRemoteDataSourceImpl(),
+          create: (_) => ReceiptRemoteDataSourceImpl(firestore: FirebaseFirestore.instance),
         ),
         ProxyProvider<ReceiptRemoteDataSource, ReceiptRepositoryImpl>(
           update: (_, dataSource, __) => ReceiptRepositoryImpl(dataSource),

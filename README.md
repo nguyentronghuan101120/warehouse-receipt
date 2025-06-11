@@ -1,94 +1,165 @@
-# Warehouse Receipt Management System
+# Hệ Thống Quản Lý Phiếu Nhập Kho
 
-A Flutter application for managing warehouse receipts and inventory tracking.
+Ứng dụng Flutter để quản lý phiếu nhập kho và theo dõi hàng tồn kho.
 
-## Features
+## Tính Năng
 
-- Create and manage warehouse receipts
-- View receipt details and history
-- Real-time data synchronization with Firebase
-- Material Design 3 UI with modern aesthetics
-- Responsive layout for various screen sizes
+- Tạo và quản lý phiếu nhập kho
+- Xem chi tiết và lịch sử phiếu
+- Đồng bộ dữ liệu thời gian thực với Firebase
+- Giao diện Material Design 3 với thẩm mỹ hiện đại
+- Bố cục responsive cho nhiều kích thước màn hình
 
-## Prerequisites
+## Yêu Cầu
 
-- Flutter SDK (version 3.6.0 or higher)
-- Dart SDK (version 3.6.0 or higher)
-- Firebase account and project setup
-- Android Studio / VS Code with Flutter extensions
+- Flutter SDK (phiên bản 3.6.0 trở lên)
+- Dart SDK (phiên bản 3.6.0 trở lên)
+- Tài khoản và dự án Firebase
+- Android Studio / VS Code với các extension Flutter
 
-## Getting Started
+## Bắt Đầu
 
-1. Clone the repository:
+1. Clone repository:
 
 ```bash
 git clone https://github.com/yourusername/warehouse_receipt.git
 ```
 
-2. Navigate to the project directory:
+2. Di chuyển vào thư mục dự án:
 
 ```bash
 cd warehouse_receipt
 ```
 
-3. Install dependencies:
+3. Cài đặt các dependencies:
 
 ```bash
 flutter pub get
 ```
 
-4. Configure Firebase:
+4. Cấu hình Firebase:
 
-   - Create a new Firebase project
-   - Add your Android/iOS app to the Firebase project
-   - Download and add the configuration files:
-     - `google-services.json` for Android
-     - `GoogleService-Info.plist` for iOS
-   - Enable Firestore in your Firebase console
+   - Tạo dự án Firebase mới
+   - Thêm ứng dụng Android/iOS vào dự án Firebase
+   - Tải và thêm các file cấu hình:
+     - `google-services.json` cho Android
+     - `GoogleService-Info.plist` cho iOS
+   - Bật Firestore trong Firebase console
 
-5. Run the app:
+5. Chạy ứng dụng:
 
 ```bash
 flutter run
 ```
 
-## Project Structure
+## Cấu Trúc Dự Án
 
 ```
 lib/
-├── constants/     # App-wide constants and configurations
-├── data/         # Data layer (repositories, data sources)
-├── providers/    # State management using Provider
-├── screens/      # UI screens
-└── utils/        # Utility functions and helpers
+├── constants/     # Các hằng số và cấu hình toàn cục
+├── data/         # Tầng dữ liệu (repositories, data sources)
+├── providers/    # Quản lý trạng thái sử dụng Provider
+├── screens/      # Các màn hình UI
+└── utils/        # Các hàm và công cụ tiện ích
 ```
+
+## Kiểm Thử
+
+Dự án bao gồm bộ test toàn diện được tổ chức theo cấu trúc sau:
+
+```
+test/
+├── data/                # Test tầng dữ liệu
+│   ├── data_sources/    # Test remote data source
+│   └── repositories/    # Test repository implementation
+├── mock/               # Dữ liệu và model giả lập
+└── providers/          # Test quản lý trạng thái
+```
+
+### Thiết Lập Test
+
+- Sử dụng `mockito` để giả lập các dependencies
+- Bao gồm dữ liệu giả lập dạng JSON
+- Tuân theo phương pháp test phân tầng:
+  - Unit test cho providers
+  - Integration test cho repositories
+  - Unit test cho data sources
+
+### Chạy Test
+
+Để chạy bộ test:
+
+```bash
+flutter test
+```
+
+Để chạy test với báo cáo độ phủ:
+
+```bash
+flutter test --coverage
+```
+
+## Cấu Trúc Cơ Sở Dữ Liệu
+
+Ứng dụng sử dụng Firestore làm cơ sở dữ liệu với cấu trúc sau:
+
+Dựa theo hình ảnh trên phiếu nhập kho, database schema sẽ có dạng như sau
+
+### Receipt Collection
+
+```json
+{
+  "id": "string", // Id tự sinh
+  "unit": "string", // Đơn vị
+  "department": "string", // Bộ phận
+  "importDate": "timestamp", // Ngày tháng nhập phiếu
+  "receiptNumber": "string", // Số phiếu
+  "isDebit": "boolean", // Nợ
+  "deliverName": "string", // Họ tên người giao
+  "followReference": "string", // Theo
+  "deliveryNumber": "string", // Số
+  "deliveryDate": "timestamp", // Ngày tháng năm
+  "deliveryFrom": "string", // Của
+  "warehouseName": "string", // Nhập tại kho
+  "warehouseLocation": "string", // Địa điểm
+  "items": [
+    // Array of items
+    {
+      "id": "string", // ID tự sinh
+      "index": "number", // Số thứ tự
+      "title": "string", // Tên, nhãn hiệu, quy cách,...
+      "code": "string", // Mã số
+      "unit": "string", // Đơn vị
+      "quantityFromDoc": "number", // Số lượng theo chứng từ
+      "quantityActual": "number", // Số lượng thực cấp
+      "unitPrice": "number", // Đơn giá
+      "totalPrice": "number" // Thành tiền
+    }
+  ],
+  "totalAmount": "number", // Tổng số tiền
+  "totalAmountInWords": "string", // Tổng số tiền viết bằng chữ
+  "numberOfOriginalDocs": "number", // Số chứng từ gốc kèm theo
+  "createdBy": "string", // Người lập phiếu
+  "deliveredBy": "string", // Người giao hàng
+  "warehouseKeeper": "string", // Thủ kho
+  "chiefAccountant": "string" // Kế toán trưởng
+}
+```
+
+### Tính Năng Chính
+
+- **Định Danh Duy Nhất**: Mỗi phiếu và mục hàng có ID riêng
+- **Trường Thời Gian**: Sử dụng Unix timestamp cho ngày tháng
+- **Cấu Trúc Lồng Nhau**: Các mục hàng được lưu dưới dạng subcollection trong mỗi phiếu
+- **Quy Tắc Xác Thực**:
+  - Số lượng phải không âm
+  - Tổng tiền được tính từ các mục hàng
+  - Tất cả các trường bắt buộc phải có
 
 ## Dependencies
 
-- `firebase_core`: ^2.24.2 - Firebase core functionality
-- `cloud_firestore`: ^4.14.0 - Cloud Firestore database
-- `provider`: ^6.1.5 - State management
-- `intl`: ^0.20.2 - Internationalization and formatting
-- `uuid`: ^4.5.1 - Unique ID generation
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For support, please open an issue in the GitHub repository or contact the development team.
-
-## Acknowledgments
-
-- Flutter team for the amazing framework
-- Firebase for backend services
-- All contributors who have helped shape this project
+- `firebase_core`: ^2.24.2 - Chức năng cốt lõi Firebase
+- `cloud_firestore`: ^4.14.0 - Cơ sở dữ liệu Cloud Firestore
+- `provider`: ^6.1.5 - Quản lý trạng thái
+- `intl`: ^0.20.2 - Quốc tế hóa và định dạng
+- `uuid`: ^4.5.1 - Tạo ID duy nhất

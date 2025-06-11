@@ -38,3 +38,8 @@ g:
 deploy:
 	fvm flutter build web
 	firebase deploy
+
+t:
+	fvm flutter test --coverage
+	genhtml coverage/lcov.info -o coverage
+	open coverage/index.html

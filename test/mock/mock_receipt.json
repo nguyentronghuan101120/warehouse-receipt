@@ -1,0 +1,151 @@
+[
+  {
+    "id": "receipt_001",
+    "unit": "Main Warehouse",
+    "department": "Logistics",
+    "importDate": 1709251200000,
+    "receiptNumber": "WR-2024-001",
+    "isDebit": true,
+    "deliverName": "John Smith",
+    "followReference": "PO-2024-001",
+    "deliveryNumber": "DEL-2024-001",
+    "deliveryDate": 1709164800000,
+    "deliveryFrom": "ABC Supplier Co., Ltd",
+    "warehouseName": "Central Warehouse",
+    "warehouseLocation": "Building A, Floor 1",
+    "items": [
+      {
+        "id": "item_001",
+        "index": 1,
+        "title": "Office Chair",
+        "code": "CH-001",
+        "unit": "pcs",
+        "quantityFromDoc": 10,
+        "quantityActual": 10,
+        "unitPrice": 150.0,
+        "totalPrice": 1500.0
+      },
+      {
+        "id": "item_002",
+        "index": 2,
+        "title": "Desk",
+        "code": "DS-001",
+        "unit": "pcs",
+        "quantityFromDoc": 5,
+        "quantityActual": 5,
+        "unitPrice": 300.0,
+        "totalPrice": 1500.0
+      }
+    ],
+    "totalAmount": 3000.0,
+    "totalAmountInWords": "Three thousand dollars only",
+    "numberOfOriginalDocs": 2,
+    "createdBy": "Jane Doe",
+    "deliveredBy": "John Smith",
+    "warehouseKeeper": "Mike Johnson",
+    "chiefAccountant": "Sarah Wilson"
+  },
+  {
+    "id": "receipt_002",
+    "unit": "North Warehouse",
+    "department": "IT",
+    "importDate": 1709337600000,
+    "receiptNumber": "WR-2024-002",
+    "isDebit": true,
+    "deliverName": "Robert Brown",
+    "followReference": "PO-2024-002",
+    "deliveryNumber": "DEL-2024-002",
+    "deliveryDate": 1709251200000,
+    "deliveryFrom": "Tech Solutions Inc.",
+    "warehouseName": "North Distribution Center",
+    "warehouseLocation": "Building B, Floor 2",
+    "items": [
+      {
+        "id": "item_003",
+        "index": 1,
+        "title": "Laptop",
+        "code": "LT-001",
+        "unit": "pcs",
+        "quantityFromDoc": 15,
+        "quantityActual": 15,
+        "unitPrice": 800.0,
+        "totalPrice": 12000.0
+      },
+      {
+        "id": "item_004",
+        "index": 2,
+        "title": "Printer",
+        "code": "PR-001",
+        "unit": "pcs",
+        "quantityFromDoc": 3,
+        "quantityActual": 3,
+        "unitPrice": 400.0,
+        "totalPrice": 1200.0
+      }
+    ],
+    "totalAmount": 13200.0,
+    "totalAmountInWords": "Thirteen thousand two hundred dollars only",
+    "numberOfOriginalDocs": 2,
+    "createdBy": "Alice Cooper",
+    "deliveredBy": "Robert Brown",
+    "warehouseKeeper": "David Lee",
+    "chiefAccountant": "Emma Thompson"
+  },
+  {
+    "id": "receipt_003",
+    "unit": "South Warehouse",
+    "department": "Maintenance",
+    "importDate": 1709424000000,
+    "receiptNumber": "WR-2024-003",
+    "isDebit": true,
+    "deliverName": "Maria Garcia",
+    "followReference": "PO-2024-003",
+    "deliveryNumber": "DEL-2024-003",
+    "deliveryDate": 1709337600000,
+    "deliveryFrom": "Maintenance Supplies Co.",
+    "warehouseName": "South Storage Facility",
+    "warehouseLocation": "Building C, Floor 1",
+    "items": [
+      {
+        "id": "item_005",
+        "index": 1,
+        "title": "Tool Set",
+        "code": "TS-001",
+        "unit": "set",
+        "quantityFromDoc": 8,
+        "quantityActual": 8,
+        "unitPrice": 250.0,
+        "totalPrice": 2000.0
+      },
+      {
+        "id": "item_006",
+        "index": 2,
+        "title": "Safety Equipment",
+        "code": "SE-001",
+        "unit": "set",
+        "quantityFromDoc": 10,
+        "quantityActual": 10,
+        "unitPrice": 150.0,
+        "totalPrice": 1500.0
+      },
+      {
+        "id": "item_007",
+        "index": 3,
+        "title": "Cleaning Supplies",
+        "code": "CS-001",
+        "unit": "box",
+        "quantityFromDoc": 20,
+        "quantityActual": 20,
+        "unitPrice": 75.0,
+        "totalPrice": 1500.0
+      }
+    ],
+    "totalAmount": 5000.0,
+    "totalAmountInWords": "Five thousand dollars only",
+    "numberOfOriginalDocs": 3,
+    "createdBy": "Tom Wilson",
+    "deliveredBy": "Maria Garcia",
+    "warehouseKeeper": "James Brown",
+    "chiefAccountant": "Lisa Anderson"
+  }
+]

@@ -10,9 +10,10 @@ abstract class ReceiptRemoteDataSource {
 }
 
 class ReceiptRemoteDataSourceImpl implements ReceiptRemoteDataSource {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firestore;
 
-  ReceiptRemoteDataSourceImpl();
+  ReceiptRemoteDataSourceImpl({required FirebaseFirestore firestore})
+      : _firestore = firestore;
 
   @override
   Future<void> addReceipt(Receipt receipt) async {

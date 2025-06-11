@@ -1,9 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'receipt_item.g.dart';
 
 @JsonSerializable()
-class ReceiptItem {
+class ReceiptItem extends Equatable {
   final String id;
   final int index;
   final String title;
@@ -14,7 +15,7 @@ class ReceiptItem {
   final double unitPrice;
   final double totalPrice;
 
-  ReceiptItem({
+  const ReceiptItem({
     required this.id,
     required this.index,
     required this.title,
@@ -29,4 +30,17 @@ class ReceiptItem {
   factory ReceiptItem.fromJson(Map<String, dynamic> json) =>
       _$ReceiptItemFromJson(json);
   Map<String, dynamic> toJson() => _$ReceiptItemToJson(this);
+
+  @override
+  List<Object?> get props => [
+        id,
+        index,
+        title,
+        code,
+        unit,
+        quantityFromDoc,
+        quantityActual,
+        unitPrice,
+        totalPrice,
+      ];
 }

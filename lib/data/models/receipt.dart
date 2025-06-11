@@ -1,10 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'receipt_item.dart';
 
 part 'receipt.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class Receipt {
+class Receipt extends Equatable {
   final String id; // Firestore document ID
   final String unit;
   final String department;
@@ -36,7 +37,7 @@ class Receipt {
   final String warehouseKeeper;
   final String chiefAccountant;
 
-  Receipt({
+  const Receipt({
     required this.id,
     required this.unit,
     required this.department,
@@ -73,4 +74,29 @@ class Receipt {
   factory Receipt.fromJson(Map<String, dynamic> json) =>
       _$ReceiptFromJson(json);
   Map<String, dynamic> toJson() => _$ReceiptToJson(this);
+
+  @override
+  List<Object?> get props => [
+        id,
+        unit,
+        department,
+        importDate,
+        receiptNumber,
+        isDebit,
+        deliverName,
+        followReference,
+        deliveryNumber,
+        deliveryDate,
+        deliveryFrom,
+        warehouseName,
+        warehouseLocation,
+        items,
+        totalAmount,
+        totalAmountInWords,
+        numberOfOriginalDocs,
+        createdBy,
+        deliveredBy,
+        warehouseKeeper,
+        chiefAccountant,
+      ];
 }
